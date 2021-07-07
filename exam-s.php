@@ -198,7 +198,7 @@ function getQuestion($e_id) {
 
 function getQuestionList($e_id) {
   global $connect;
-  $query = "SELECT * FROM Answers WHERE Student_id='$_SESSION[username]' && Exam_id='$e_id'";
+  $query = "SELECT * FROM answers WHERE Student_id='$_SESSION[username]' && Exam_id='$e_id'";
   $result = mysqli_query($connect, $query);
   return $result;
 }
