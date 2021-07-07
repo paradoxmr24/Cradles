@@ -3,7 +3,7 @@ $role = 'Student';
 $isExam = true;
 require 'includes/validate.php';
 require_once 'includes/connection.php';
-$e_id = $_GET['id'];
+$e_id = $_GET['e_id'];
 
 
 $useAngular = true;
