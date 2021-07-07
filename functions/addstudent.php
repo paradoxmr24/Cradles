@@ -40,7 +40,7 @@ function validation($rdata) {
     if(!isValid($rdata->data->phone, 10, 10, '/^[0-9]+$/','Phone', 'should be Phone Number')) {
         return false;
     }
-    if(!isValid($rdata->data->mail, 1, 30, '/^[a-zA-Z@.]+$/','Mail', 'should be a valid mail')) {
+    if(!isValid($rdata->data->mail, 1, 30, '/^[0-9a-zA-Z@.]+$/','Mail', 'should be a valid mail')) {
          return false;
     }
     if(!isValid($rdata->data->password, 5, 15, '','Password', '')) {
