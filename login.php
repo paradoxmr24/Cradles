@@ -120,8 +120,8 @@
             ?>
          </select>
       </div>
-      <?php if(isset($_GET['id'])) { ?>
-      <input value="<?php echo $_GET['id']; ?>" class="d-none" name="id">
+      <?php if(isset($_GET['e_id'])) { ?>
+      <input value="<?php echo $_GET['e_id']; ?>" class="d-none" name="id">
       <?php } ?>
       <button type="submit" class="btn btn-primary form-control mt-2 rounded">Login</button>
    </form>

@@ -68,15 +68,15 @@ if($role == 'Teacher') {
 
 if(isset($_SESSION['username'])) {
     
-    if(isset($_POST['id'])) {
+    if(isset($_POST['id']) && $role == 'Student') {
         $loc = 'location:../exam';
         $connect = connectdb($_SESSION['d_name']);
         $query = "SELECT * FROM exams WHERE Id = '$_POST[id]'";
         $result = mysqli_fetch_assoc(mysqli_query($connect,$query));
         if($result['Type'] == 'S') {
-           $loc .= '-s.php?id=' . $_POST['id'];
+           $loc .= '-s.php?e_id=' . $_POST['id'];
         } else {
-            $loc .= '.php?id=' . $_POST['id'];
+            $loc .= '.php?e_id=' . $_POST['id'];
         }
         header($loc);
     } else {
@@ -84,7 +84,7 @@ if(isset($_SESSION['username'])) {
     }
 } else {
     if(isset($_POST['id'])) {
-        header('location:../login.php' . '?id=' . "$_POST[id]");
+        header('location:../login.php' . '?e_id=' . "$_POST[id]");
     } else {
         header('location:../login.php');
     }

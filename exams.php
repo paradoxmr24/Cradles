@@ -101,10 +101,10 @@ $bjs = 'rtable.js';
       <td><?php formButton('post','questions.php','id',$row['Id'],'btn-primary','View'); ?></td>
 <?php if($row['Type'] == 'S') { ?>
       <td><?php formButton('get','copies.php','e_id',$row['Id'],'btn-primary','Check');?></td>
-      <td><Button class="btn btn-primary" onclick="copyToClipboard(this)" value="<?php echo $url . 'exam-s.php?id=' . $row['Id']; ?>">Copy</button></td>
+      <td><Button class="btn btn-primary" onclick="copyToClipboard(this)" value="<?php echo $url . 'exam-s.php?e_id=' . $row['Id']; ?>">Copy</button></td>
 <?php } else { ?>
       <td><button class="btn btn-primary text-white" type="submit" disabled>Check</button></td>
-      <td><Button class="btn btn-primary" onclick="copyToClipboard(this)" value="<?php echo $url . 'exam.php?id=' . $row['Id']; ?>">Copy</button></td>
+      <td><Button class="btn btn-primary" onclick="copyToClipboard(this)" value="<?php echo $url . 'exam.php?e_id=' . $row['Id']; ?>">Copy</button></td>
 <?php } ?>
       <td><?php formButton('post','functions/delete.php','id',$row['Id'],'btn-danger','Delete'); ?></td>
     </tr>
