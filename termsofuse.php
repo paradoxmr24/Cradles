@@ -3,6 +3,8 @@ $role = 'All';
 require 'includes/validate.php';
 require_once 'includes/connection.php';
 $title = 'Terms of Use';
+$domain = explode('.',$_SERVER['SERVER_NAME']);
+$domain = isset($domain[count($domain)-2]) ? $domain[count($domain)-2] . '.' . $domain[count($domain)-1] : $domain[count($domain)-1];
 ?>
 <?php include 'includes/topbar.php'; ?>
 
@@ -12,7 +14,7 @@ $title = 'Terms of Use';
 
 <p>Version 1.0</p>
 
-<p>The Zapid Academy website located at www.zapidacademy.com is a copyrighted work belonging to Led Zapid. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
+<p>The Cradles website located at this domain is a copyrighted work belonging to Cradles. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
 
 <p>All such additional terms, guidelines, and rules are incorporated by reference into these Terms.</p>
 
@@ -58,7 +60,7 @@ You agree not to use the Site to collect, upload, transmit, display, or distribu
 
 <p>You hereby release and forever discharge the Company and our officers, employees, agents, successors, and assigns from, and hereby waive and relinquish, each and every past, present and future dispute, claim, controversy, demand, right, obligation, liability, action and cause of action of every kind and nature, that has arisen or arises directly or indirectly out of, or that relates directly or indirectly to, the Site. If you are a California resident, you hereby waive California civil code section 1542 in connection with the foregoing, which states: "a general release does not extend to claims which the creditor does not know or suspect to exist in his or her favor at the time of executing the release, which if known by him or her must have materially affected his or her settlement with the debtor."</p>
 
-<p><strong>Cookies and Web Beacons.</strong> Like any other website, Zapid Academy uses ‘cookies’. These cookies are used to store information including visitors’ preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users’ experience by customizing our web page content based on visitors’ browser type and/or other information.</p>
+<p><strong>Cookies and Web Beacons.</strong> Like any other website, Cradles uses ‘cookies’. These cookies are used to store information including visitors’ preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users’ experience by customizing our web page content based on visitors’ browser type and/or other information.</p>
 
 
 
@@ -145,8 +147,8 @@ Dispute Resolution. Please read this Arbitration Agreement carefully. It is part
 
 <h2>Contact Information</h2>
 
-<p>Address: Gonda</p>
-<p>Email: contact@zapidacademy.com</p>
+<p>Address: UP, India</p>
+<p>Email: contact@<?php echo $domain?></p>
 </section>
 
 <?php include 'includes/bottom.php' ?>

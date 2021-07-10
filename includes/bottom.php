@@ -1,8 +1,8 @@
 </div>
       <!-- End of Main Content -->
-  
+      <!-- To add Credits in future
         <a class="card nav-link text-right" href="http://www.ledzapid.com">
-          <span>-Powered By Ledzapid</span></a>
+          <span>-Powered By Ledzapid</span></a -->
 
     </div>
     <!-- End of Content Wrapper -->
