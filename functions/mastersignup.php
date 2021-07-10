@@ -21,9 +21,9 @@ if($_SESSION['username'] == 'Admin') {
         $connect = connectdb('admin');
        $query = "INSERT INTO logindata values ('$data[username]','$data[password]','$data[school]','$data[address]','$data[phone]','$data[mail]','$data[plan]','$data[purchase]','$data[expire]','$data[valid]','Teacher','$data[name]')";
        if(mysqli_query($connect, $query)) {
-            echo 'Submitted Successfully'; 
+            echo 'Submitted Successfully '; 
         } else {
-        echo 'Submition Failed';
+        echo 'Submition Failed ';
         }
     }
     } else {
@@ -47,7 +47,7 @@ if($_SERVER['SERVER_NAME'] != 'localhost') {
 }
 $query = "SHOW DATABASES LIKE '$a'";
 if(mysqli_num_rows(mysqli_query($connect,$query))) {
-    echo "database $name Created";
+    echo "database $name Created ";
     $connect = connectdb($name);
     //------Creating student table
     $query = "CREATE TABLE students (
@@ -63,9 +63,9 @@ if(mysqli_num_rows(mysqli_query($connect,$query))) {
         PRIMARY KEY (Username)
         )";
     if(mysqli_query($connect, $query)) {
-        echo 'Student table created';
+        echo 'Student table created ';
     } else {
-        echo 'Cannot create student table';
+        echo 'Cannot create student table ';
     }
 
     //-----------Creating exams table
@@ -83,9 +83,9 @@ if(mysqli_num_rows(mysqli_query($connect,$query))) {
         PRIMARY KEY (Id)
         )";
     if(mysqli_query($connect, $query)) {
-        echo 'Exams table created';
+        echo 'Exams table created ';
     } else {
-        echo 'Cannot create exams table';
+        echo 'Cannot create exams table ';
     }
 
     //-----------Creating notification table
@@ -96,9 +96,9 @@ if(mysqli_num_rows(mysqli_query($connect,$query))) {
         P_date Date
         )";
     if(mysqli_query($connect, $query)) {
-        echo 'Notification table created';
+        echo 'Notification table created ';
     } else {
-        echo 'Cannot create notification table';
+        echo 'Cannot create notification table ';
     }
 
     //-----------Creating answers table
@@ -111,9 +111,9 @@ if(mysqli_num_rows(mysqli_query($connect,$query))) {
         PRIMARY KEY(Student_id,Exam_id,Answer_id)
         )";
     if(mysqli_query($connect, $query)) {
-        echo 'Answers table created';
+        echo 'Answers table created ';
     } else {
-        echo 'Cannot create answers table';
+        echo 'Cannot create answers table ';
     }
 
     //---------Creating table marks
@@ -125,13 +125,13 @@ if(mysqli_num_rows(mysqli_query($connect,$query))) {
         PRIMARY KEY (Student_id,Exam_id)
         )";
     if(mysqli_query($connect, $query)) {
-        echo 'Marks table created';
+        echo 'Marks table created ';
     } else {
-        echo 'Cannot create marks table';
+        echo 'Cannot create marks table ';
     }
     return true;
 } else {
-    echo 'Cannot find the database';
+    echo 'Cannot find the database ';
     return false;
 }
 }
