@@ -26,7 +26,7 @@ function getFormattedTime($time, $extended = false) {
 function formButton($method,$action,$name,$value,$color,$button) { ?>
     <form method="<?php echo $method; ?>" action="<?php echo $action; ?>">
         <input name="<?php echo $name; ?>" style="display:none;!important" value="<?php echo $value ?>">
-        <button class="btn <?php echo $color; ?> text-white" type="submit"><?php echo $button; ?></button>
+        <button class="btn <?php echo $color; ?>" type="submit"><?php echo $button; ?></button>
     </form>
 
 <?php } 

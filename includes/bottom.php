@@ -42,9 +42,30 @@
 <?php } ?>
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.js"></script>
+  <script>
+    const btn = document.querySelector("#btn-toggle");
+// Select the stylesheet <link>
+const theme = document.querySelector("#theme-link");
 
+// Listen for a click on the button
+btn.addEventListener("click", function() {
+  head = document.getElementsByTagName('head')[0];
+  css = document.getElementById('dark-css');
 
+  //if the element is not created create it else delete it;
+  if(!css) {
+    tag = document.createElement("link");
+    tag.setAttribute('href','css/dark.css');
+    tag.setAttribute('rel','stylesheet');
+    tag.setAttribute('type','text/css');
+    tag.setAttribute('id','dark-css');
+    head.appendChild(tag);
+  } else {
+    css.parentNode.removeChild(css);
+  }
 
+});
+  </script>
 </body>
 
 </html>

@@ -62,7 +62,7 @@ $bjs = 'copy.js';
           <input type="text" class="form-control" ng-model="data.password">
         </div>
         <div class="form-group col-6">
-          <label class="text-white"> 0</label>
+          <label style="color: transparent"> 0</label>
         <button ng-click="submit()" class="form-control btn btn-primary" onclick="copyToClipboarda(document.getElementById('copy'));">Sign Up</button>
         </div></div>
 

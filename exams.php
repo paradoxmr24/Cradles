@@ -68,7 +68,7 @@ $bjs = 'rtable.js';
   </div>
 </form>
 
-<table class="table table-striped table-responsive-stack" style="color:#000!important;">
+<table class="table table-striped table-responsive-stack">
   <thead class="thead-light">
     <tr>
       <th scope="col">Id</th>
@@ -103,7 +103,7 @@ $bjs = 'rtable.js';
       <td><?php formButton('get','copies.php','e_id',$row['Id'],'btn-primary','Check');?></td>
       <td><Button class="btn btn-primary" onclick="copyToClipboard(this)" value="<?php echo $url . 'exam-s.php?e_id=' . $row['Id']; ?>">Copy</button></td>
 <?php } else { ?>
-      <td><button class="btn btn-primary text-white" type="submit" disabled>Check</button></td>
+      <td></td>
       <td><Button class="btn btn-primary" onclick="copyToClipboard(this)" value="<?php echo $url . 'exam.php?e_id=' . $row['Id']; ?>">Copy</button></td>
 <?php } ?>
       <td><?php formButton('post','functions/delete.php','id',$row['Id'],'btn-danger','Delete'); ?></td>

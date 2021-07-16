@@ -12,7 +12,8 @@
   <title><?php echo $title; ?></title>
   <link href="libs/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/button.css" rel="stylesheet">
   <?php if(isset($style)) { ?>
     <link href="css/<?php echo $style; ?>" rel="stylesheet">
   <?php } ?>
@@ -130,7 +131,7 @@
           <span>About</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+          <div class="py-2 collapse-inner rounded">
             <h6 class="collapse-header">Information Pages</h6>
             <a class="collapse-item" href="privacypolicy.php">Privacy Policy</a>
             <a class="collapse-item" href="disclaimer.php">Discalimer</a>
@@ -144,20 +145,15 @@
     </ul>
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+          <h4>Dark Mode: &nbsp</h4>
+          <label class="switch">
+            <input type="checkbox" id="btn-toggle">
+            <span class="slider round"></span>
+          </label>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

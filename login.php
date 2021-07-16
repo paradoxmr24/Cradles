@@ -93,7 +93,7 @@
       </div>
       <div class="form-group input-icons">
          <i class="fas fa-fw fa-unlock icon"></i>
-         <input type="text" name="password" class="form-control" placeholder="Password" autocomplete="off">
+         <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
       </div>
       <div class="input-icons">
          <i class="fas fa-fw fa-user-tag icon"></i>
