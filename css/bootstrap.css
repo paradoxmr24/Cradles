@@ -10528,3 +10528,11 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%
 }
+
+.list-button {
+    border: none;
+}
+
+.list-button:hover {
+    text-decoration: underline;
+}

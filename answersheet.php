@@ -28,16 +28,16 @@ echo $row['Question'] . ' - ' . $row['Mks'] . ' Marks';
 <form method="POST" action="">
     <input name="e_id" style="display:none!important;" value="<?php echo $e_id; ?>">
     <input name="s_id" style="display:none!important;" value="<?php echo $row['Student_id']; ?>">
-    <select name="serial" class="custom-select">
+    <div class="text-center">
     <?php 
       $query1 = "SELECT * FROM answers WHERE Exam_id='$e_id' && Student_id='$s_id' && Image != 'none'";
       $result1 = mysqli_query($connect, $query1);
       while($row1 = mysqli_fetch_assoc($result1)) {
     ?>
-      <option value="<?php echo $row1['Answer_id']-1; ?>"><?php echo $row1['Answer_id'] ?></option>
+      <button class="list-button" name="serial" value="<?php echo $row1['Answer_id']-1; ?>"><?php echo $row1['Answer_id'] ?></button>
     <?php } ?>
+      </div>
     </select>
-    <button class="btn btn-primary text-white mt-4 form-control" name="next" type="submit">Go to </button>
 </form>
 <form method="POST" action="">
     <input name="e_id" style="display:none!important;" value="<?php echo $e_id; ?>">
