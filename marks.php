@@ -3,7 +3,7 @@ $role = 'Student';
 require 'includes/validate.php';
 require_once 'includes/connection.php';
 $connect = connectdb($_SESSION['d_name']);
-$query = "SELECT exams.Name,exams.Subject,exams.E_Date,exams.E_Time,exams.Type,exams.Duration,marks.Marks FROM marks INNER JOIN exams WHERE exams.Id = marks.Exam_id && marks.Student_id = '$_SESSION[username]' && marks.Checked = '1'";
+$query = "SELECT exams.Id,exams.Name,exams.Subject,exams.E_Date,exams.E_Time,exams.Type,exams.Duration,marks.Marks FROM marks INNER JOIN exams WHERE exams.Id = marks.Exam_id && marks.Student_id = '$_SESSION[username]' && marks.Checked = '1'";
 $result = mysqli_query($connect,$query);
 
 function getFormattedDate($date) {
@@ -51,6 +51,13 @@ $bjs = 'rtable.js';
       <td><?php echo $row['Type']; ?></td>
       <td><?php echo $row['Duration']; ?></td>
       <td><?php echo $row['Marks'] ?></td>
+      <td>
+        <form method="post" action="answersheet-s.php">
+          <input name="e_id" style="display:none;!important" value="<?php echo $row['Id']; ?>">
+          <input name="s_id" style="display:none;!important" value="<?php echo $_SESSION['username']; ?>">
+          <button class="btn btn-primary text-white" type="submit">View</button>
+        </form>
+      </td>
     </tr>
 <?php } ?>
   </tbody>
