@@ -59,10 +59,10 @@ $title = 'Add Questions';
         <div class="col-12 my-2">
         Answer:
           <select class="custom-select mr-sm-2" ng-model="data.answer">
-            <option value="{{data.option1}}" ng-show="data.option1">{{data.option1}}</option>
-            <option value="{{data.option2}}" ng-show="data.option2">{{data.option2}}</option>
-            <option value="{{data.option3}}" ng-show="data.option3">{{data.option3}}</option>
-            <option value="{{data.option4}}" ng-show="data.option4">{{data.option4}}</option>
+            <option value="1" ng-show="data.option1">{{data.option1}}</option>
+            <option value="2" ng-show="data.option2">{{data.option2}}</option>
+            <option value="3" ng-show="data.option3">{{data.option3}}</option>
+            <option value="4" ng-show="data.option4">{{data.option4}}</option>
           </select>
           <button class="form-control btn btn-primary mt-3" ng-click="submit()">Add Question</button>
           <button class="form-control btn btn-primary my-3" ng-click="finish()">Finish</button>

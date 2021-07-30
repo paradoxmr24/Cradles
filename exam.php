@@ -18,11 +18,11 @@ $title = 'Exam';
 <h4 id="time" class="ml-auto" ng-if="!over">Time Remaining - {{timeLimit}}</h4>
     <div ng-if="started && question">
     <h4 class="font-weight-bold">{{id}}. {{question}}
-    <form  class="my-4">
+    <form class="my-4" id="answerradio">
       <div class="row">
         <div class="rounded shadow col-11 m-2 px-3" onclick="document.getElementById('answer1').click();">
         <div class="form-check" >
-          <input class="form-check-input" type="radio" name="answer" id="answer1" value="{{option1}}" checked>
+          <input class="form-check-input" type="radio" name="answer" id="answer1" value="{{option1}}">
           <h4 class="form-check-label" for="answer1">
             {{option1}}
           </h4>

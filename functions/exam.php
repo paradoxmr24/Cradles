@@ -37,6 +37,9 @@ if($rdata->q == '') {
             $answer = $rdata->answer;
                 if($_SESSION['answer'] == $answer) {
                     incrementMarks();
+                    saveAnswer($answer, 1);
+                } else {
+                    saveAnswer($answer, 0);
                 }
         } else {
             initEntry();
@@ -121,5 +124,12 @@ function incrementMarks() {
     $result['Marks'] = strstr($result['Marks'],'/',true) + 1 . strstr($result['Marks'],'/');
     $query = "UPDATE marks SET Marks='$result[Marks]' WHERE Student_id = '$_SESSION[username]' && Exam_id = '$e_id'";
     mysqli_query($connect, $query);
+}
+
+function saveAnswer($answer, $isCorrect) {
+    global $connect, $e_id;
+
+        $query = "INSERT INTO oanswers VALUES ('$_SESSION[username]','$e_id','$_SESSION[count]','$answer', '$isCorrect')";
+        mysqli_query($connect, $query);
 }
 ?>

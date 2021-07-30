@@ -101,7 +101,7 @@ if(mysqli_num_rows(mysqli_query($connect,$query))) {
         echo 'Cannot create notification table ';
     }
 
-    //-----------Creating answers table
+    //-----------Creating answers table Subjective
     $query = "CREATE TABLE answers (
         Student_id VARCHAR(15),
         Exam_id VARCHAR(6),
@@ -114,6 +114,21 @@ if(mysqli_num_rows(mysqli_query($connect,$query))) {
         echo 'Answers table created ';
     } else {
         echo 'Cannot create answers table ';
+    }
+
+    //---------Creating answers table Objective
+    $query = "CREATE TABLE oanswers (
+        Student_id VARCHAR(15),
+        Exam_id VARCHAR(6),
+        Question_id VARCHAR(6),
+        Answer_id VARCHAR(6),
+        Correct INT(1),
+        PRIMARY KEY(Student_id, Exam_id, Question_id)
+    )";
+    if(mysqli_query($connect, $query)) {
+        echo 'answer-o table created';
+    } else {
+        echo 'Cannot create answers-o table';
     }
 
     //---------Creating table marks

@@ -29,9 +29,10 @@ app.controller("myController", ($scope, $http, $interval) => {
     $scope.start = () => {
         if ($scope.started && $scope.question) {
             el = document.getElementsByName("answer");
+            answer = 0;
             for (i = 0; i < el.length; i++) {
                 if (el[i].checked) {
-                    answer = el[i].value;
+                    answer = ++i;
                 }
             }
         } else {
@@ -52,6 +53,9 @@ app.controller("myController", ($scope, $http, $interval) => {
             $scope.option3 = response.data.Option3;
             $scope.option4 = response.data.Option4;
             $scope.done = response.data.Answer;
+            if (answer) {
+                document.getElementById('answerradio').reset();
+            }
         }, (error) => {
             console.log(error);
         });

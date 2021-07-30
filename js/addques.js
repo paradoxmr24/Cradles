@@ -1,46 +1,46 @@
-let app = angular.module("myApp",[]);
+let app = angular.module("myApp", []);
 
-app.controller("myController",($scope, $http) => {
-	$scope.data = {id:1}; 
+app.controller("myController", ($scope, $http) => {
+	$scope.data = { id: 1 };
 	dataCount = 8;
 	$scope.data.e_id = document.getElementById("e_id").innerHTML;
 
 
 	$scope.submit = () => {
-		if(checkFields()) {
-		$http.post("functions/addques.php",{
-			'data':$scope.data
+		if (checkFields()) {
+			$http.post("functions/addques.php", {
+				'data': $scope.data
 			}).then((response) => {
-                showAlert(response.data);
-                if(response.data == 'Successfully submitted') {
-				    clearInputs();
-                    $scope.data.id++;
-                }
-			},(error) => {
+				showAlert(response.data);
+				if (response.data == 'Successfully submitted') {
+					clearInputs();
+					$scope.data.id++;
+				}
+			}, (error) => {
 				showAlert(error);
 			});
 		} else {
-            showAlert("Fill all the fields");
-        }
+			showAlert("Fill all the fields");
+		}
 	}
 
 	$scope.finish = () => {
 		window.location.replace("index.php");
 	}
 
-//--------------------------------------------- Manmade ;) Functions
+	//--------------------------------------------- Manmade ;) Functions
 
 	checkFields = () => {
 		for (let member in $scope.data) {
-			if(!$scope.data[member] || !(Object.keys($scope.data).length == dataCount)) return false;
+			if (!$scope.data[member] || !(Object.keys($scope.data).length == dataCount)) return false;
 		}
 		return true;
 	}
 
 	clearInputs = () => {
 		for (let member in $scope.data) {
-			if(member != "id" && member != "e_id") {
-			$scope.data[member] = undefined;
+			if (member != "id" && member != "e_id") {
+				$scope.data[member] = undefined;
 			}
 		}
 	}
