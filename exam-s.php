@@ -29,7 +29,7 @@ if($data) {
   </div>
   <hr>
   <?php echo '<h4><pre>' . $data['Id'] . '. ' . $data['Question'] . '</pre></h4>'; ?>
-
+  <img src="#" id="answer" width="200" class="d-none">
   <button class="form-control my-2 btn btn-primary" onclick="document.getElementById('inputfile').click()">Upload</button>
   <button class="form-control my-2 btn btn-primary" onclick="upload(this)" id="next" disabled>Next</button>
   <button class="form-control my-2 btn btn-danger" id="skip" onclick="upload(this)">Skip</button>
@@ -121,6 +121,8 @@ getRemainingTime();
 function success() {
       if($('#inputfile').prop('files')[0].name != '') {
         document.getElementById("next").removeAttribute("disabled");
+        $('#answer').removeClass('d-none');
+        $('#answer').attr("src",URL.createObjectURL($('#inputfile').prop('files')[0]));
       }
 }
 
